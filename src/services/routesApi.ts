@@ -126,7 +126,7 @@ export async function createRoute(route: RouteDraft): Promise<void> {
     const operation = post({
       apiName,
       path: 'routes',
-      options: { body: toApiBody(route) },
+      options: { body: toApiBody(route) as any },
     });
     await operation.response;
   } catch (error) {
@@ -166,7 +166,7 @@ export async function updateRoute(
     const operation = patch({
       apiName,
       path: `routes/${encodeURIComponent(original.kitId)}/${original.routeOrder}`,
-      options: { body: toApiBody(route) },
+      options: { body: toApiBody(route) as any },
     });
     await operation.response;
   } catch (error) {
