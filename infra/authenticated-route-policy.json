@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "InvokeMikeFsrAdminApi",
+      "Effect": "Allow",
+      "Action": "execute-api:Invoke",
+      "Resource": [
+        "arn:aws:execute-api:us-east-1:447343943149:v2jhgg4szi/dev/GET/routes",
+        "arn:aws:execute-api:us-east-1:447343943149:v2jhgg4szi/dev/POST/routes",
+        "arn:aws:execute-api:us-east-1:447343943149:v2jhgg4szi/dev/PATCH/routes/*/*",
+        "arn:aws:execute-api:us-east-1:447343943149:v2jhgg4szi/dev/DELETE/routes/*/*"
+      ]
+    }
+  ]
+}

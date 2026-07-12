@@ -1,0 +1,5 @@
+# Run only after replacing the placeholder with the exact Amplify production domain.
+aws apigatewayv2 update-api \
+  --api-id v2jhgg4szi \
+  --region us-east-1 \
+  --cors-configuration 'AllowOrigins=https://REPLACE_WITH_AMPLIFY_DOMAIN,AllowMethods=GET,POST,PATCH,DELETE,OPTIONS,AllowHeaders=authorization,content-type,x-amz-date,x-amz-security-token,x-api-key,MaxAge=300'
