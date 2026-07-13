@@ -96,7 +96,7 @@ export async function listRoutes(): Promise<FsrRoute[]> {
   }
 
   try {
-    const operation = get({ apiName, path: 'routes' });
+    const operation = get({ apiName, path: '/routes' });
     const { body } = await operation.response;
     const payload = await readJsonBody(body);
     return extractRecords(payload)
@@ -125,7 +125,7 @@ export async function createRoute(route: RouteDraft): Promise<void> {
   try {
     const operation = post({
       apiName,
-      path: 'routes',
+      path: '/routes',
       options: { body: toApiBody(route) as any },
     });
     await operation.response;
@@ -165,7 +165,7 @@ export async function updateRoute(
   try {
     const operation = patch({
       apiName,
-      path: `routes/${encodeURIComponent(original.kitId)}/${original.routeOrder}`,
+      path: `/routes/${encodeURIComponent(original.kitId)}/${original.routeOrder}`,
       options: { body: toApiBody(route) as any },
     });
     await operation.response;
@@ -188,7 +188,7 @@ export async function archiveRoute(route: FsrRoute): Promise<void> {
   try {
     const operation = del({
       apiName,
-      path: `routes/${encodeURIComponent(route.kitId)}/${route.routeOrder}`,
+      path: `/routes/${encodeURIComponent(route.kitId)}/${route.routeOrder}`,
     });
     await operation.response;
   } catch (error) {
